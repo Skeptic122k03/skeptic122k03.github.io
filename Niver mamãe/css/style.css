@@ -1,0 +1,129 @@
+body {
+    background-color: #ffe4e1; /* Rosa claro inicial */
+    background-image: linear-gradient(120deg, #ffe4e1, #9370db); /* Lilás mais escuro */
+    background-size: 200% 200%;
+    animation: backgroundAnimation 10s ease infinite, bodyColorChange 10s ease infinite;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 50px;
+    overflow: hidden;
+    position: relative; /* Para que os gatinhos possam ser posicionados em relação ao body */
+    margin: 0; /* Remover margens padrão */
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bodyColorChange {
+    0% { background-color: #ffe4e1; } /* Rosa claro */
+    33% { background-color: #87cefa; } /* Azul-bebê */
+    66% { background-color: #9370db; } /* Lilás */
+    100% { background-color: #ffffff; } /* Branco */
+}
+
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 20px #ffb6c1, 0 0 30px #ffb6c1, 0 0 40px #ffb6c1, 0 0 50px #ffb6c1; /* Rosa claro */
+    }
+    33% {
+        box-shadow: 0 0 20px #87cefa, 0 0 30px #87cefa, 0 0 40px #87cefa, 0 0 50px #87cefa; /* Azul-bebê */
+    }
+    66% {
+        box-shadow: 0 0 20px #9370db, 0 0 30px #9370db, 0 0 40px #9370db, 0 0 50px #9370db; /* Lilás */
+    }
+    100% {
+        box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff; /* Branco */
+    }
+}
+
+@keyframes colorChange {
+    0% { background-color: #ffebf0; } /* Rosa e branco */
+    33% { background-color: #f0eaff; } /* Lilás e branco */
+    66% { background-color: #e0f7fa; } /* Azul-bebê e branco */
+    100% { background-color: #ffebf0; } /* Rosa e branco novamente */
+}
+
+@keyframes rain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+    border: 5px solid transparent; /* Bordas transparentes inicialmente */
+    animation: neonGlow 2s infinite alternate, colorChange 8s ease infinite;
+    max-width: 90%; /* Ajusta o tamanho máximo do container */
+    margin: 0 auto; /* Centraliza o container */
+}
+
+h1 {
+    color: #ff69b4; /* Cor do cabeçalho */
+    font-size: 2em; /* Ajuste para texto maior em telas pequenas */
+}
+
+p {
+    color: #ff69b4; /* Cor do texto dos parágrafos igual à do cabeçalho */
+    font-size: 1.2em; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte mais chamativa */
+    margin: 20px 0; /* Espaço acima e abaixo do parágrafo */
+}
+
+img {
+    width: 300px; /* Diminuindo o tamanho da imagem */
+    height: 300px; /* Diminuindo o tamanho da imagem */
+    border-radius: 50%;
+    margin: 20px 0;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorção */
+}
+
+input {
+    padding: 10px;
+    border: 2px solid #ff69b4;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 300px; /* Define um tamanho máximo */
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+/* Animação dos gatinhos */
+.kitty {
+    position: absolute;
+    width: 50px; /* Ajuste do tamanho dos gatinhos */
+    height: 50px; /* Ajuste do tamanho dos gatinhos */
+    background-size: cover;
+    z-index: 5;
+    animation: float 10s ease-in-out infinite, rain 5s linear infinite;
+}
+
+/* Adicionando múltiplos gatinhos com diferentes posições e tempos */
+.kitty:nth-of-type(1) { top: -10%; left: 10%; }
+.kitty:nth-of-type(2) { top: -20%; left: 30%; animation-duration: 6s; }
+.kitty:nth-of-type(3) { top: -30%; left: 50%; animation-duration: 7s; }
+.kitty:nth-of-type(4) { top: -40%; left: 70%; animation-duration: 5s; }
+.kitty:nth-of-type(5) { top: -50%; left: 20%; animation-duration: 8s; }
+.kitty:nth-of-type(6) { top: -60%; left: 40%; animation-duration: 6s; }
+.kitty:nth-of-type(7) { top: -70%; left: 60%; animation-duration: 7s; }
+.kitty:nth-of-type(8) { top: -80%; left: 80%; animation-duration: 5s; }
